@@ -7,8 +7,13 @@ let basket = [];
 const maxItems = 5;
 
 function addItem(item) {
-  basket.push(item);
-  return true;
+  if (isFull(basket)) {
+    console.log('Your basket is full, you cannot add more items.');
+  } // if basket contains 5+ items, the function will not add to the array
+  else {
+    basket.push(item);
+    return true;
+  }
 } // end of addItem
 
 function listItems(array) {
@@ -26,9 +31,11 @@ function empty(array) {
 function isFull() {
   console.log('checking if basket is full...');
   if (basket.length < maxItems) {
+    console.log("basket is not full.");
     return false;
   } // returns false if number of items in basket is less than maxItems
   else {
+    console.log('basket is full!!');
     return true;
   } // returns true is number of items in basket is >= maxItems
 } //end isFull function
@@ -38,19 +45,32 @@ function isFull() {
 console.log(basket);
 
 // test addItem
-console.log('This will return true if the function ran:', addItem('potato'));
-console.log('This will return true if the function ran:', addItem('tomato'));
-console.log('This will return true if the function ran:', addItem('bread'));
-console.log('This will return true if the function ran:', addItem('Coca-cola'));
-console.log('This will return true if the function ran:', addItem('chives'));
+console.log('This will return true if the function added an item:', addItem('potato'));
+console.log('This will return true if the function added an item:', addItem('tomato'));
+console.log('This will return true if the function added an item:', addItem('bread'));
+console.log('This will return true if the function added an item:', addItem('Coca-cola'));
+console.log('This will return true if the function added an item:', addItem('chives'));
 console.log(`This is what is in my basket:`, basket);
 
 //test listItems function
 listItems(basket);
 
-// test isFull
+// test isFull with full basket
 console.log('The basket is full (contains 5+ items):', isFull(basket));
 
 // test empty function
 empty(basket);
 console.log(basket);
+
+// test isFull with empty basket
+console.log('The basket is full (contains 5+ items):', isFull(basket));
+
+// test new addItem functionality with isFull
+console.log('This will return true if the function added an item:', addItem('potato'));
+console.log('This will return true if the function added an item:', addItem('tomato'));
+console.log('This will return true if the function added an item:', addItem('bread'));
+console.log('This will return true if the function added an item:', addItem('Coca-cola'));
+console.log('This will return true if the function added an item:', addItem('chives'));
+console.log('This will return true if the function added an item:', addItem('detergent'));
+console.log('This will return true if the function added an item:', addItem('Twizzlers'));
+console.log(`This is what is in my basket:`, basket);
