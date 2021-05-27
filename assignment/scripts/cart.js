@@ -9,6 +9,7 @@ const maxItems = 5;
 function addItem(item) {
   if (isFull(basket)) {
     console.log('Your basket is full, you cannot add more items.');
+    return false;
   } // if basket contains 5+ items, the function will not add to the array
   else {
     basket.push(item);
@@ -74,3 +75,5 @@ console.log('This will return true if the function added an item:', addItem('chi
 console.log('This will return true if the function added an item:', addItem('detergent'));
 console.log('This will return true if the function added an item:', addItem('Twizzlers'));
 console.log(`This is what is in my basket:`, basket);
+
+console.log('this array should be 5 items or fewer', basket);
