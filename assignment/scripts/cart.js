@@ -14,7 +14,7 @@ function addItem(item) {
   else {
     basket.push(item);
     return true;
-  }
+  } // adds item to basket, return true
 } // end of addItem
 
 function listItems(array) {
@@ -41,6 +41,17 @@ function isFull() {
   } // returns true is number of items in basket is >= maxItems
 } //end isFull function
 
+function removeItem(item) {
+  let index = basket.indexOf(item);
+  if (index === -1) {
+    console.log(`${item} was not in the basket!!`);
+    return null;
+  } // returns null if the item is not in the array
+  else {
+    basket.splice(index, 1);
+    console.log(`${item} has been removed from the basket.`);
+  }
+} // end of removeItem
 
 // test basket array
 console.log(basket);
@@ -77,3 +88,11 @@ console.log('This will return true if the function added an item:', addItem('Twi
 console.log(`This is what is in my basket:`, basket);
 
 console.log('this array should be 5 items or fewer', basket);
+
+//test removeItem
+removeItem('tomato');
+console.log(`This is what is in my basket:`, basket);
+
+// test removeItem, if item is not in array
+removeItem('banana');
+console.log(`This is what is in my basket:`, basket);
