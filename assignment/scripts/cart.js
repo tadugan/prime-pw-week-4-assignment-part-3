@@ -71,6 +71,7 @@ listItems(basket);
 console.log('The basket is full (contains 5+ items):', isFull(basket));
 
 // test empty function
+console.log(basket);
 empty(basket);
 console.log(basket);
 
@@ -90,6 +91,7 @@ console.log(`This is what is in my basket:`, basket);
 console.log('this array should be 5 items or fewer', basket);
 
 //test removeItem
+console.log(basket);
 removeItem('tomato');
 console.log(`This is what is in my basket:`, basket);
 
